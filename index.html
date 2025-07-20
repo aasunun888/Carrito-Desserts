@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Carrito de la compra</title>
+</head>
+<body>
+   <!--  <aa-producto-postre> </aa-producto-postre> -->
+    <!--LISTA DE POSTRES-->
+    <h1>Desserts</h1>
+    <div class="contenedor">
+        <div class="contenedor-postres" id="contenedorPostres">
+        
+    </div>
+    <!--FIN DE LISTA DE POSTRES-->
+
+    <!--CARRITO DE LA ORDEN-->
+    <div class="contenedor-carrito">
+        <h2>Your Cart</h2>
+        <div class="lista-carrito"></div>
+        <div class="contenedor-total">
+            <span>Order total</span>
+            <h2 id="precio-total"></h2>
+        </div>
+        <button id="confirmar-orden">Confirm Order</button>
+    </div>
+    <!--FINAL DE LA ORDEN-->
+    </div>
+    
+
+    <!--MODAL DE CONFIRMACION-->
+    <div class="modal" hidden>
+        <h2>Order Confirmed</h2>
+        <span>We hope you enjoy the desserts!</span>
+        <ul class="lista-carrito"></ul>
+        <div class="contenedor-total">
+            <span>Order total</span>
+            <h2 id="precio-total"></h2>
+        </div>
+        <button id="empezar-nueva">Start new order</button>
+    </div>
+    <!--FIN MODAL DE CONFIRMACION-->
+
+ 
+    <script src="js/script.js"></script>
+    <script src="js/producto-postre.js"></script>
+</body>
+</html>

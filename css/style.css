@@ -1,0 +1,94 @@
+body{
+    margin: 5rem;
+    background-color: rgba(128, 128, 128, 0.19);
+}
+.contenedor{
+  display: flex;
+  gap: 2rem;
+}
+.contenedor-postres{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+.carta-postre{
+    display: grid;
+    gap: 0.2rem;
+    width: 18rem;
+    height: 25rem;
+
+}
+img{
+    width:18rem;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.añadir-carrito{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding:0.5rem;
+    width: 8rem;
+    border-radius: 50px;
+    position: relative;
+    bottom: 1.5rem;
+    left: 5rem;
+    border: 1px solid rgba(0, 0, 0, 0.176);
+}
+.añadir-carrito:hover{
+    border: 1px solid rgba(0, 0, 0, 0.372);
+    transition: border 0.3s;
+    cursor: pointer;
+}
+
+.carrito{
+    width: 1rem;
+    height: 1rem;
+}
+span{
+    color: rgba(0, 0, 0, 0.477);
+}
+.precio{
+    color: #e28743;
+    font-weight: bolder;
+}
+.contenedor-carrito{
+    background-color: white;
+    width: 20rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.contenedor-carrito h2{
+    color: #e28743;
+    font-weight: bolder;
+
+}
+.contenedor-carrito button{
+    background-color: #cc691d;
+    padding: 0.5rem;
+    width: 20rem;
+    border-radius: 2rem;
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.176);
+}
+.contenedor-carrito button:hover{
+  background-color: #9b4809;
+  transition: backgroun-color 0.3s;
+  cursor: pointer;
+}
+.control-cantidad {
+  display: inline-flex;
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.btn-menos,
+.btn-mas {
+  background-color: #f3b237;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1em;
+}
