@@ -131,10 +131,10 @@ function añadirCarrito(productoComponenteElegido) {
 
 
   }
-
-  //añadir o actualizar hud de botones a html
-  cambiarHUD(itemExistente);
 }
+  //añadir o actualizar hud de botones a html
+  /* cambiarHUD(itemExistente);
+ */
 //Funcion auxiliar para encontrar el producto segun la id
 function encontrarProducto(id) {
 
@@ -142,7 +142,7 @@ function encontrarProducto(id) {
 }
 
 //funcion para cambiar hud de boton de añadir carrito
-function cambiarHUD(item) {
+/* function cambiarHUD(item) {
   if (item) {// Solo actualizamos si el producto ya está en el carrito
 
     let boton = document.getElementsByClassName("añadir-carrito")[0]; //coger boton
@@ -181,10 +181,10 @@ function cambiarHUD(item) {
     contenedorControles.appendChild(btnMenos);
     contenedorControles.appendChild(btnMas);
     boton.append(contenedorControles);
-  }
+  } */
 
 
-}
+/* } */
 
 
 

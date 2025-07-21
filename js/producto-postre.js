@@ -4,7 +4,7 @@ class ProductoPostre extends HTMLElement {
         super();
         this.producto = producto;
         this.setAttribute("data-id", producto.id);
-     
+
 
     }
 
@@ -22,7 +22,7 @@ class ProductoPostre extends HTMLElement {
 
 
         let button = document.createElement("button");
-        button.addEventListener("click", (event) =>{
+        button.addEventListener("click", (event) => {
             this.onClickAnadir(this);
             //TODO actualizar hud tras añadir al carrito, llamar a funcion dentro de la clase
             this.actualizarButton(button);
@@ -51,22 +51,59 @@ class ProductoPostre extends HTMLElement {
 
     }
 
-    set onClickAnadir (value){
+    set onClickAnadir(value) {
         this._clickAnadir = value;
     }
 
-    get onClickAnadir (){
+    get onClickAnadir() {
         return this._clickAnadir;
     }
 
     //funcion actualizar HUD
-    actualizarButton(btn){
+    actualizarButton(btn) {
         //Si el boton no esta disponible o no se lo ha podido pasar (Garantiza que siempre se tenga)
-        if(!btn){
-            btn = this.querySelector("button"); 
+        if (!btn) {
+            btn = this.querySelector("button");
         }
 
-        btn.textContent = "actualizado";
+        //crear contenedor de botones
+        let contenedorControles = document.createElement("div");
+        contenedorControles.className = "control-cantidad";
+
+        //boton menos
+        let btnMenos = document.createElement("button");
+        btnMenos.textContent = "-";
+        btnMenos.className = "btn-menos";
+
+        btnMenos.addEventListener("click", () => {
+            if (this.producto.cantidad > 1) {
+                this.producto.cantidad--;
+                this.querySelector(".cantidad").textContent = this.producto.cantidad;
+            }
+        });
+
+        //boton mas
+        let btnMas = document.createElement("button");
+        btnMas.textContent = "+";
+        btnMas.className = "btn-mas";
+        btnMas.addEventListener("click", () => {
+            this.producto.cantidad++;
+            this.querySelector(".cantidad").textContent = this.producto.cantidad;
+        });
+
+        //Cantidad de producto
+        let cantidad = document.createElement("p");
+        cantidad.textContent = this.producto.cantidad;
+
+
+        contenedorControles.appendChild(btnMenos);
+        contenedorControles.appendChild(cantidad);
+        contenedorControles.appendChild(btnMas);
+
+
+        btn.innerHTML = ""; //Limpiar contenido actual
+        btn.appendChild(contenedorControles); //Agregar el HUD
+
     }
 }
 
